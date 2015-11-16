@@ -43,6 +43,7 @@
 		1AE9F57C1BF9A53500524EB3 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9F56C1BF9A53500524EB3 /* UIView+WebCacheOperation.m */; };
 		1AE9F5821BF9A6F500524EB3 /* MLHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9F5811BF9A6F500524EB3 /* MLHTTPManager.m */; };
 		1AE9F5851BF9AB8900524EB3 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9F5841BF9AB8900524EB3 /* NSArray+Log.m */; };
+		1AE9F5881BF9AF8100524EB3 /* MLHeadLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9F5871BF9AF8100524EB3 /* MLHeadLine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,8 @@
 		1AE9F5811BF9A6F500524EB3 /* MLHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLHTTPManager.m; sourceTree = "<group>"; };
 		1AE9F5831BF9AB8900524EB3 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		1AE9F5841BF9AB8900524EB3 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		1AE9F5861BF9AF8100524EB3 /* MLHeadLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLHeadLine.h; sourceTree = "<group>"; };
+		1AE9F5871BF9AF8100524EB3 /* MLHeadLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLHeadLine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +311,8 @@
 			children = (
 				1A9CD7BD1BF998E9001837E1 /* MLHeadLineNewsController.h */,
 				1A9CD7BE1BF998E9001837E1 /* MLHeadLineNewsController.m */,
+				1AE9F5861BF9AF8100524EB3 /* MLHeadLine.h */,
+				1AE9F5871BF9AF8100524EB3 /* MLHeadLine.m */,
 			);
 			name = HeadLine;
 			sourceTree = "<group>";
@@ -490,6 +495,7 @@
 				1AE9F54A1BF9A51E00524EB3 /* AFURLSessionManager.m in Sources */,
 				1AE9F5751BF9A53500524EB3 /* SDWebImagePrefetcher.m in Sources */,
 				1AE9F5761BF9A53500524EB3 /* UIButton+WebCache.m in Sources */,
+				1AE9F5881BF9AF8100524EB3 /* MLHeadLine.m in Sources */,
 				1AE9F5781BF9A53500524EB3 /* UIImage+MultiFormat.m in Sources */,
 				1AE9F5711BF9A53500524EB3 /* SDWebImageDecoder.m in Sources */,
 				1AE9F57C1BF9A53500524EB3 /* UIView+WebCacheOperation.m in Sources */,

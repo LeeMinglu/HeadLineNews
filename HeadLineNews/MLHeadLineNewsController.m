@@ -8,9 +8,12 @@
 
 #import "MLHeadLineNewsController.h"
 #import "MLHTTPManager.h"
+#import "MLHeadLine.h"
+#import "UIImageView+WebCache.h"
 
 @interface MLHeadLineNewsController ()
 
+@property (nonatomic, strong) NSArray *HeadLineNews;
 @end
 
 @implementation MLHeadLineNewsController
@@ -21,36 +24,55 @@
     self.title = @"头条新闻";
     self.tableView.rowHeight = 60;
     
+//    1.初始化管理器
     MLHTTPManager *manager = [MLHTTPManager manager];
     
-    [manager GET:@"http://c.m.163.com/nc/article/headline/T1348647853363/0-140.html" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"请求成功---%@", responseObject);
+    //2.请求头条新闻数据
+    [manager GET:@"http://c.m.163.com/nc/article/headline/T1348647853363/0-140.html" parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+        
+        NSArray *html = responseObject[@"T1348647853363"];
+        
+        NSMutableArray *arrayM = [NSMutableArray array];
+        
+        
+        for (NSDictionary *dict in html) {
+            MLHeadLine *headLine = [MLHeadLine headLineWidthDict:dict];
+            
+            [arrayM addObject:headLine];
+        }
+        
+        self.HeadLineNews = arrayM;
+        
+        //重新加载数据,否则不显示数据
+        [self.tableView reloadData];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"请求失败----%@", error);
+        
     }];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+  
 }
 
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return 1;
-//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 40;
+    
+    return self.HeadLineNews.count;
+    
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HeadLine" forIndexPath:indexPath];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"NEWSTitle---%td", indexPath.row];
-    cell.detailTextLabel.text = [NSString stringWithFormat: @"news--cotents--%td", indexPath.row];
+    MLHeadLine *headLine = self.HeadLineNews[indexPath.row];
+    
+    cell.textLabel.text = headLine.title;
+    cell.detailTextLabel.text = headLine.digest;
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:headLine.imgsrc] placeholderImage:[UIImage imageNamed:@"loading"]];
+    NSLog(@"cell.textLabel.text\n");
     
     return cell;
 }
