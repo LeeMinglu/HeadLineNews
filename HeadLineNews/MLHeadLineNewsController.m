@@ -7,6 +7,7 @@
 //
 
 #import "MLHeadLineNewsController.h"
+#import "MLHTTPManager.h"
 
 @interface MLHeadLineNewsController ()
 
@@ -20,8 +21,13 @@
     self.title = @"头条新闻";
     self.tableView.rowHeight = 60;
     
+    MLHTTPManager *manager = [MLHTTPManager manager];
     
-    
+    [manager GET:@"http://c.m.163.com/nc/article/headline/T1348647853363/0-140.html" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"请求成功---%@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"请求失败----%@", error);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
