@@ -16,6 +16,9 @@
     headLine.title = dict[@"title"];
     headLine.imgsrc = dict[@"imgsrc"];
     headLine.digest = dict[@"digest"];
+    headLine.url = dict[@"url"];
+    headLine.url_3w = dict[@"url_3w"];
+    headLine.docid = dict[@"docid"];
     
     
     return headLine;

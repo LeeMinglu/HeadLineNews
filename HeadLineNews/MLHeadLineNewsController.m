@@ -10,6 +10,7 @@
 #import "MLHTTPManager.h"
 #import "MLHeadLine.h"
 #import "UIImageView+WebCache.h"
+#import "MLDetailController.h"
 
 @interface MLHeadLineNewsController ()
 
@@ -72,9 +73,23 @@
     cell.textLabel.text = headLine.title;
     cell.detailTextLabel.text = headLine.digest;
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:headLine.imgsrc] placeholderImage:[UIImage imageNamed:@"loading"]];
-    NSLog(@"cell.textLabel.text\n");
+
     
     return cell;
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    NSInteger row = self.tableView.indexPathForSelectedRow.row;
+    MLDetailController *detailController = segue.destinationViewController;
+    
+    detailController.headline = self.HeadLineNews[row];
+    
+    
+    
+    
+    
 }
 
 @end

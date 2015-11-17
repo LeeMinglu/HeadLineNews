@@ -24,6 +24,13 @@
  */
 @property (nonatomic, copy) NSString *digest;
 
+/** 新闻url */
+@property (nonatomic , copy) NSString *url;
+/** 新闻url */
+@property (nonatomic , copy) NSString *url_3w;
+/** 新闻id */
+@property (nonatomic , copy) NSString *docid;
+
 + (instancetype) headLineWidthDict:(NSDictionary *)dict;
 
 @end

@@ -44,6 +44,7 @@
 		1AE9F5821BF9A6F500524EB3 /* MLHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9F5811BF9A6F500524EB3 /* MLHTTPManager.m */; };
 		1AE9F5851BF9AB8900524EB3 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9F5841BF9AB8900524EB3 /* NSArray+Log.m */; };
 		1AE9F5881BF9AF8100524EB3 /* MLHeadLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9F5871BF9AF8100524EB3 /* MLHeadLine.m */; };
+		1AF9D6101BFA3CF900AF63B6 /* MLDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF9D60F1BFA3CF900AF63B6 /* MLDetailController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,8 @@
 		1AE9F5841BF9AB8900524EB3 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		1AE9F5861BF9AF8100524EB3 /* MLHeadLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLHeadLine.h; sourceTree = "<group>"; };
 		1AE9F5871BF9AF8100524EB3 /* MLHeadLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLHeadLine.m; sourceTree = "<group>"; };
+		1AF9D60E1BFA3CF900AF63B6 /* MLDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLDetailController.h; sourceTree = "<group>"; };
+		1AF9D60F1BFA3CF900AF63B6 /* MLDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDetailController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				1AE9F57D1BF9A5F100524EB3 /* HeadLine */,
+				1AF9D60D1BFA3CC100AF63B6 /* Detail */,
 				1AE9F57E1BF9A60600524EB3 /* Detail */,
 				1A9CD7C01BF9A49A001837E1 /* Lib */,
 				1AE9F57F1BF9A61200524EB3 /* Others */,
@@ -333,6 +337,15 @@
 				1A9CD78B1BF9985E001837E1 /* AppDelegate.m */,
 			);
 			name = Others;
+			sourceTree = "<group>";
+		};
+		1AF9D60D1BFA3CC100AF63B6 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				1AF9D60E1BFA3CF900AF63B6 /* MLDetailController.h */,
+				1AF9D60F1BFA3CF900AF63B6 /* MLDetailController.m */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,6 +512,7 @@
 				1AE9F5781BF9A53500524EB3 /* UIImage+MultiFormat.m in Sources */,
 				1AE9F5711BF9A53500524EB3 /* SDWebImageDecoder.m in Sources */,
 				1AE9F57C1BF9A53500524EB3 /* UIView+WebCacheOperation.m in Sources */,
+				1AF9D6101BFA3CF900AF63B6 /* MLDetailController.m in Sources */,
 				1AE9F5851BF9AB8900524EB3 /* NSArray+Log.m in Sources */,
 				1A9CD7891BF9985E001837E1 /* main.m in Sources */,
 			);

@@ -42,6 +42,9 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="NKS-8K-tVF" kind="show" id="WFW-61-fIw"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -54,6 +57,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXR-03-Luf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="148" y="334"/>
+        </scene>
+        <!--Detail Controller-->
+        <scene sceneID="huR-BT-rwM">
+            <objects>
+                <viewController id="NKS-8K-tVF" customClass="MLDetailController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fbh-ui-1R4"/>
+                        <viewControllerLayoutGuide type="bottom" id="A75-PO-0Tr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X9a-SB-WqZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEI-Vp-pen">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YEI-Vp-pen" secondAttribute="trailing" id="StS-Rp-DO8"/>
+                            <constraint firstItem="A75-PO-0Tr" firstAttribute="top" secondItem="YEI-Vp-pen" secondAttribute="bottom" id="YAt-yo-BJV"/>
+                            <constraint firstItem="YEI-Vp-pen" firstAttribute="top" secondItem="X9a-SB-WqZ" secondAttribute="top" id="bQZ-Dz-DAS"/>
+                            <constraint firstItem="YEI-Vp-pen" firstAttribute="leading" secondItem="X9a-SB-WqZ" secondAttribute="leading" id="frA-O2-GxM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="YEI-Vp-pen" id="Uji-O4-Hkl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ukI-oA-txy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885" y="334"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DBF-ZK-831">
