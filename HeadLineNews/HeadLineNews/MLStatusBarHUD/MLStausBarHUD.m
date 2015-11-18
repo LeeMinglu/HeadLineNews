@@ -41,13 +41,33 @@ UIWindow *_window;
     [_window addSubview:button];
     _window.hidden = NO;
     
+    [UIView animateWithDuration:2.0 animations:^{
+        
+        CGRect frame = _window.frame;
+        frame.origin.y = 0;
+        _window.frame = frame;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:1.0 animations:^{
+            
+            CGRect frame = _window.frame;
+            frame.origin.y = -WINDOW_HEIGHT;
+            _window.frame = frame;
+
+        } completion:^(BOOL finished) {
+             _window = nil;
+        }];
+        
+    }];
+   
     
+    /**
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         CGRect frame = _window.frame;
         frame.origin.y = WINDOW_HEIGHT;
         _window.frame = frame;
     });
+     */
     
     
     
