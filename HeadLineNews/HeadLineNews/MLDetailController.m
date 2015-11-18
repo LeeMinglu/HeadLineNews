@@ -11,6 +11,7 @@
 #import "MLHTTPManager.h"
 #import "MLDetail.h"
 #import "MLDetailImage.h"
+#import "MLStausBarHUD.h"
 
 @interface MLDetailController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -26,6 +27,7 @@
     // Do any additional setup after loading the view.
     
     self.title = @"新闻详情";
+    [MLStausBarHUD showSuccess:@"成功"];
     
     self.webView.delegate = self;
     

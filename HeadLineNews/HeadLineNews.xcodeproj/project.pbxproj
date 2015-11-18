@@ -49,6 +49,7 @@
 		1AF9D6101BFA3CF900AF63B6 /* MLDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF9D60F1BFA3CF900AF63B6 /* MLDetailController.m */; };
 		1AFA86C31BFB4FDC004A09FD /* MLDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA86C21BFB4FDC004A09FD /* MLDetail.m */; };
 		1AFE21361BFC4EC100AA7AB1 /* MLStausBarHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFE21351BFC4EC100AA7AB1 /* MLStausBarHUD.m */; };
+		1AFE21381BFC6E3900AA7AB1 /* MLStausBarHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1AFE21371BFC6E3900AA7AB1 /* MLStausBarHUD.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		1AFA86C21BFB4FDC004A09FD /* MLDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDetail.m; sourceTree = "<group>"; };
 		1AFE21341BFC4EC100AA7AB1 /* MLStausBarHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStausBarHUD.h; sourceTree = "<group>"; };
 		1AFE21351BFC4EC100AA7AB1 /* MLStausBarHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStausBarHUD.m; sourceTree = "<group>"; };
+		1AFE21371BFC6E3900AA7AB1 /* MLStausBarHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MLStausBarHUD.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +372,7 @@
 			children = (
 				1AFE21341BFC4EC100AA7AB1 /* MLStausBarHUD.h */,
 				1AFE21351BFC4EC100AA7AB1 /* MLStausBarHUD.m */,
+				1AFE21371BFC6E3900AA7AB1 /* MLStausBarHUD.bundle */,
 			);
 			path = MLStatusBarHUD;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				1A9CD79A1BF9985E001837E1 /* LaunchScreen.storyboard in Resources */,
 				1A9CD7971BF9985E001837E1 /* Assets.xcassets in Resources */,
 				1A9CD7921BF9985E001837E1 /* Main.storyboard in Resources */,
+				1AFE21381BFC6E3900AA7AB1 /* MLStausBarHUD.bundle in Resources */,
 				1A9221C91BFB7B8A002AF703 /* MLDetail.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,7 +639,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -672,7 +676,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
