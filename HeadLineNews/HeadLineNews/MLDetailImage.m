@@ -9,15 +9,15 @@
 #import "MLDetailImage.h"
 
 @implementation MLDetailImage
-
-+ (instancetype)detailImageWithDict:(NSDictionary *)dict {
-    MLDetailImage *image = [[MLDetailImage alloc] init];
-    
-    image.pixel = dict[@"pixel"];
-    image.ref = dict[@"ref"];
-    image.src = dict[@"src"];
-    
-    return image;
-}
+//
+//+ (instancetype)detailImageWithDict:(NSDictionary *)dict {
+//    MLDetailImage *image = [[MLDetailImage alloc] init];
+//    
+//    image.pixel = dict[@"pixel"];
+//    image.ref = dict[@"ref"];
+//    image.src = dict[@"src"];
+//    
+//    return image;
+//}
 
 @end

@@ -8,29 +8,35 @@
 
 #import "MLDetail.h"
 #import "MLDetailImage.h"
+#import "MJExtension.h"
 
 
 @implementation MLDetail
 
-+ (instancetype)detailWithDict:(NSDictionary *)dict {
-    MLDetail *detail = [[MLDetail alloc] init];
-    
-    detail.title = dict[@"title"];
-    detail.body = dict[@"body"];
-    detail.ptime = dict[@"ptime"];
-    
-    NSArray *imgArray = dict[@"img"];
-    
-    NSMutableArray *arrayM = [NSMutableArray array];
-    
-    for (NSDictionary *dict in imgArray) {
-        MLDetailImage *detailImage = [MLDetailImage detailImageWithDict:dict];
-        [arrayM addObject:detailImage];
-    }
-    detail.img = arrayM;
-    
-    return detail;
-}
+//+ (instancetype)detailWithDict:(NSDictionary *)dict {
+//    MLDetail *detail = [[MLDetail alloc] init];
+//    
+//    detail.title = dict[@"title"];
+//    detail.body = dict[@"body"];
+//    detail.ptime = dict[@"ptime"];
+//    
+//    NSArray *imgArray = dict[@"img"];
+//    
+//    NSMutableArray *arrayM = [NSMutableArray array];
+//    
+//    for (NSDictionary *dict in imgArray) {
+//        MLDetailImage *detailImage = [MLDetailImage detailImageWithDict:dict];
+//        [arrayM addObject:detailImage];
+//    }
+//    detail.img = arrayM;
+//    
+//    return detail;
+//}
 
+
++ (NSDictionary *)objectClassInArray
+{
+    return @{@"img" : [MLDetailImage class]};
+}
 
 @end

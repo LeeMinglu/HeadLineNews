@@ -14,5 +14,5 @@
 @property (nonatomic, copy) NSString *ref;
 @property (nonatomic, copy) NSString *src;
 
-+ (instancetype)detailImageWithDict:(NSDictionary *) dict;
+//+ (instancetype)detailImageWithDict:(NSDictionary *) dict;
 @end

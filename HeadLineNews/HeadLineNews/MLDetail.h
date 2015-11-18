@@ -15,6 +15,6 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *ptime;
 
-+ (instancetype)detailWithDict:(NSDictionary *) dict;
+//+ (instancetype)detailWithDict:(NSDictionary *) dict;
 
 @end

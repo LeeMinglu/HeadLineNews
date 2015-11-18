@@ -12,6 +12,7 @@
 #import "MLDetail.h"
 #import "MLDetailImage.h"
 #import "MLStausBarHUD.h"
+#import "MJExtension.h"
 
 @interface MLDetailController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -43,7 +44,9 @@
 //            进入详细新闻后保存到桌面上
 //            [responseObject writeToFile:@"/Users/luoriver/Desktop/detail.plist" atomically:YES];
             
-            self.detail = [MLDetail detailWithDict:responseObject[self.headline.docid]];
+//            self.detail = [MLDetail detailWithDict:responseObject[self.headline.docid]];
+            
+            self.detail = [MLDetail objectWithKeyValues:responseObject[self.headline.docid]];
             
             [self showNewDetail];
 
