@@ -27,7 +27,7 @@
     // Do any additional setup after loading the view.
     
     self.title = @"新闻详情";
-    [MLStausBarHUD showSuccess:@"成功"];
+    [MLStausBarHUD showMessage:@"成功"];
     
     self.webView.delegate = self;
     

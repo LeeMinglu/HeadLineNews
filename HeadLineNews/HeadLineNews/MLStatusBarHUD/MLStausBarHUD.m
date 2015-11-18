@@ -31,7 +31,7 @@ UIWindow *_window;
     
     //创建window
     _window = [[UIWindow alloc] init];
-    _window.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, WINDOW_HEIGHT);
+    _window.frame = CGRectMake(0, -WINDOW_HEIGHT, [UIScreen mainScreen].bounds.size.width, WINDOW_HEIGHT);
     button.frame = _window.bounds;
     _window.backgroundColor = [UIColor blackColor];
     
@@ -41,6 +41,22 @@ UIWindow *_window;
     [_window addSubview:button];
     _window.hidden = NO;
     
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        CGRect frame = _window.frame;
+        frame.origin.y = WINDOW_HEIGHT;
+        _window.frame = frame;
+    });
+    
+    
+    
+    
+}
+
++ (void)hiddenMessage {
+
+
 }
 
 
