@@ -27,9 +27,9 @@
     // Do any additional setup after loading the view.
     
     self.title = @"新闻详情";
-    [MLStausBarHUD showMessage:@"成功"];
-    
+   
     self.webView.delegate = self;
+    [MLStausBarHUD showLoading:@"正在加载中!"];
     
 //    self.headline
     NSString *url = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/%@/full.html", self.headline.docid];
@@ -165,7 +165,9 @@
         //保存图片
         UIImage *image = [UIImage imageWithData:imageData];
         
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+        
+//        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
         
         
     }]];
@@ -174,6 +176,16 @@
     [alert addAction:[UIAlertAction actionWithTitle:@"否" style:UIAlertActionStyleCancel handler:nil]];
     
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    
+    if (error) {
+        [MLStausBarHUD showError:@"保存失败"];
+    }else {
+        [MLStausBarHUD showSucess:@"保存成功"];
+    }
 }
 
 

@@ -19,15 +19,17 @@ UIWindow *_window;
 
 @implementation MLStausBarHUD
 
-+ (void)showMessage:(NSString *)message {
++ (void)showMessage:(NSString *)message image:(UIImage *)image {
     
+    if (_window) return;
     //创建一个button
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [button setTitle:message forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:@"MLStausBarHUD.bundle/success"] forState:UIControlStateNormal];
+    [button setImage:image forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:WINDOW_FONT];
     
+    button.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
     
     //创建window
     _window = [[UIWindow alloc] init];
@@ -52,31 +54,77 @@ UIWindow *_window;
             CGRect frame = _window.frame;
             frame.origin.y = -WINDOW_HEIGHT;
             _window.frame = frame;
-
+            
         } completion:^(BOOL finished) {
-             _window = nil;
+            _window = nil;
         }];
         
     }];
-   
-    
-    /**
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        CGRect frame = _window.frame;
-        frame.origin.y = WINDOW_HEIGHT;
-        _window.frame = frame;
-    });
-     */
-    
-    
-    
-    
 }
 
-+ (void)hiddenMessage {
++ (void)showMessage:(NSString *)message imageName:(NSString *)imageName {
+    [self showMessage:message image:[UIImage imageNamed:imageName]];
+}
 
 
++ (void)showSucess:(NSString *)message {
+    [self showMessage:message imageName:@"MLStausBarHUD.bundle/success"];
+}
+
+
++ (void)showError:(NSString *)message {
+    [self showMessage:message imageName:@"MLStausBarHUD.bundle/error"];
+}
+
++ (void)showLoading:(NSString *)message {
+    
+    if (_window) return;
+    //创建window
+    _window = [[UIWindow alloc] init];
+    _window.frame = CGRectMake(0, -WINDOW_HEIGHT, [UIScreen mainScreen].bounds.size.width, WINDOW_HEIGHT);
+    _window.backgroundColor = [UIColor blackColor];
+    
+    //设置window的等级
+    _window.windowLevel = UIWindowLevelAlert;
+    _window.hidden = NO;
+    UILabel *label = [[UILabel alloc] init];
+    
+    label.frame = _window.bounds;
+    label.text = message;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.textColor = [UIColor whiteColor];
+    [_window addSubview:label];
+    
+    //添加指示器
+    UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    
+    //让指示器转动起来
+    [indicatorView startAnimating];
+    
+    //设置frame
+    indicatorView.frame = CGRectMake(0, 0, WINDOW_HEIGHT, WINDOW_HEIGHT);
+    
+    [_window addSubview:indicatorView];
+    
+    [UIView animateWithDuration:2.0 animations:^{
+        
+        CGRect frame = _window.frame;
+        frame.origin.y = 0;
+        _window.frame = frame;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:1.0 animations:^{
+            
+            CGRect frame = _window.frame;
+            frame.origin.y = -WINDOW_HEIGHT;
+            _window.frame = frame;
+            
+        } completion:^(BOOL finished) {
+            _window = nil;
+        }];
+        
+    }];
+    
+    
 }
 
 

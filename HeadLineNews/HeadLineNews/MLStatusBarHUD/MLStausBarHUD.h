@@ -17,7 +17,7 @@
  *  @param msg   文字内容
  *  @param image 图片对象
  */
-//+ showMessage:(NSString *)message image:(UIImage *)image;
++ (void)showMessage:(NSString *)message image:(UIImage *)image;
 
 /**
  *  显示信息
@@ -25,20 +25,25 @@
  *  @param msg   文字内容
  *  @param imageName 图片名称 (图片高度最好在 20 以内, 仅限于本地图片)
  */
-//+ showMessage:(NSString *)message imageName:(NSString *)imageName;
++ (void)showMessage:(NSString *)message imageName:(NSString *)imageName;
 
 /**
  *  显示成功信息
  *
  *  @param message 成功参数
  */
-+ (void)showMessage:(NSString *)message;
++ (void)showSucess:(NSString *)message;
+
 
 /**
  *  隐藏信息
  */
-+ (void)hiddenMessage;
++ (void)showError:(NSString *)message;
 
+/**
+ *  显示加载信息
+ */
++(void) showLoading:(NSString *)message;
 
 
 
