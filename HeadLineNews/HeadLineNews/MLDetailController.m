@@ -113,6 +113,7 @@
 //        <img src="/images/furclothing/standard/tb2azagfpxxxxanxxxxxxxxxxxx_537608854.jpg">
         
         // img.pixel -->  550*344
+//        分隔字符串
         NSArray *pixel = [img.pixel componentsSeparatedByString:@"*"]; // [550, 344]
         
         int width = [[pixel firstObject] intValue];
@@ -123,9 +124,12 @@
             width = maxWidth;
         }
         
+        //定义javaScrip脚本
         NSString *onload = @"this.onclick = function() {"
-        "window.location.href = 'hm://?src='+this.src;"
-        "};";
+                            "window.location.href = 'ml:saveImageToAblum:&' + this.src"
+                            "};";
+        
+        //执行javaScrip的脚本
         [imgHtml appendFormat:@"<img onload=\"%@\" width=\"%d\" height=\"%d\" src=\"%@\">",onload, width, height, img.src];
 
         
@@ -141,10 +145,72 @@
 }
 
 
+- (void)saveImageToAblum:(NSString *)imgSrc {
+    
+    UIAlertController  *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"是否要保存图片到相册?" preferredStyle:(UIAlertControllerStyleActionSheet)];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"是" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        //UIWeb的缓存由NSURLCache来管理
+        NSURLCache *cache = [NSURLCache sharedURLCache];
+        
+        //从网页的缓存中获取图片
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:imgSrc]];
+        
+        NSCachedURLResponse *response = [cache cachedResponseForRequest:request];
+        
+        NSData *imageData = response.data;
+        
+        //保存图片
+        UIImage *image = [UIImage imageWithData:imageData];
+        
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+        
+        
+    }]];
+    
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"否" style:UIAlertActionStyleCancel handler:nil]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
 #pragma mark: 实现webView的协议 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
+    NSString *url = request.URL.absoluteString;
+    
+    //定义字符串的范围
+    NSRange range = [url rangeOfString:@"ml:"];
+    
+    if (range.length > 0) {
+        NSUInteger loc = range.location + range.length;
+        
+//     获取方法名  及参数
+        NSString *path = [url substringFromIndex:loc];
+        
+        NSArray *methodNameAndParam = [path componentsSeparatedByString:@"&"];
+        
+        NSString *methodName = methodNameAndParam.firstObject;
+        NSString *param = nil;
+        
+        if (methodNameAndParam.count > 1) {
+            param = methodNameAndParam.lastObject;
+        }
+        
+        //将字符串转换成SEL方法
+        SEL methodSel = NSSelectorFromString(methodName);
+        
+        if ([self respondsToSelector:methodSel]) {
+            [self performSelector:methodSel withObject:param];
+        }
+        
+        return NO;
+        
+    }
     return YES;
+    
+    
 }
 
 @end

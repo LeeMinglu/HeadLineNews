@@ -48,6 +48,7 @@
 		1AE9F5881BF9AF8100524EB3 /* MLHeadLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9F5871BF9AF8100524EB3 /* MLHeadLine.m */; };
 		1AF9D6101BFA3CF900AF63B6 /* MLDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF9D60F1BFA3CF900AF63B6 /* MLDetailController.m */; };
 		1AFA86C31BFB4FDC004A09FD /* MLDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA86C21BFB4FDC004A09FD /* MLDetail.m */; };
+		1AFE21361BFC4EC100AA7AB1 /* MLStausBarHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFE21351BFC4EC100AA7AB1 /* MLStausBarHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,8 @@
 		1AF9D60F1BFA3CF900AF63B6 /* MLDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDetailController.m; sourceTree = "<group>"; };
 		1AFA86C11BFB4FDC004A09FD /* MLDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLDetail.h; sourceTree = "<group>"; };
 		1AFA86C21BFB4FDC004A09FD /* MLDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLDetail.m; sourceTree = "<group>"; };
+		1AFE21341BFC4EC100AA7AB1 /* MLStausBarHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStausBarHUD.h; sourceTree = "<group>"; };
+		1AFE21351BFC4EC100AA7AB1 /* MLStausBarHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStausBarHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +205,7 @@
 			children = (
 				1AE9F57D1BF9A5F100524EB3 /* HeadLine */,
 				1AF9D60D1BFA3CC100AF63B6 /* Detail */,
+				1AFE21331BFC4E8100AA7AB1 /* MLStatusBarHUD */,
 				1AE9F57E1BF9A60600524EB3 /* Detail */,
 				1A9CD7C01BF9A49A001837E1 /* Lib */,
 				1AE9F57F1BF9A61200524EB3 /* Others */,
@@ -359,6 +363,15 @@
 				1A9221C81BFB7B8A002AF703 /* MLDetail.css */,
 			);
 			name = Detail;
+			sourceTree = "<group>";
+		};
+		1AFE21331BFC4E8100AA7AB1 /* MLStatusBarHUD */ = {
+			isa = PBXGroup;
+			children = (
+				1AFE21341BFC4EC100AA7AB1 /* MLStausBarHUD.h */,
+				1AFE21351BFC4EC100AA7AB1 /* MLStausBarHUD.m */,
+			);
+			path = MLStatusBarHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -525,6 +538,7 @@
 				1AE9F5751BF9A53500524EB3 /* SDWebImagePrefetcher.m in Sources */,
 				1AE9F5761BF9A53500524EB3 /* UIButton+WebCache.m in Sources */,
 				1AE9F5881BF9AF8100524EB3 /* MLHeadLine.m in Sources */,
+				1AFE21361BFC4EC100AA7AB1 /* MLStausBarHUD.m in Sources */,
 				1AE9F5781BF9A53500524EB3 /* UIImage+MultiFormat.m in Sources */,
 				1AE9F5711BF9A53500524EB3 /* SDWebImageDecoder.m in Sources */,
 				1AE9F57C1BF9A53500524EB3 /* UIView+WebCacheOperation.m in Sources */,
